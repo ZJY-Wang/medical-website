@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>病症科普 - 康颐健康</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">康颐健康</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="disease.html" class="nav-link active">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>常见病症科普</h1>
+    <p>了解常见症状，早预防、早发现、早治疗</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span><span>病症科普</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-all">全部</button>
+      <button class="tab-btn" data-tab="tab-cardio">心血管</button>
+      <button class="tab-btn" data-tab="tab-respire">呼吸系统</button>
+      <button class="tab-btn" data-tab="tab-digest">消化系统</button>
+      <button class="tab-btn" data-tab="tab-bone">骨骼肌肉</button>
+      <button class="tab-btn" data-tab="tab-other">其他</button>
+    </div>
+
+    <div class="tab-content active" id="tab-all">
+      <div class="disease-grid">
+        <div class="disease-card">
+          <div class="disease-icon">&#9829;</div>
+          <h4>高血压</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>头晕、头痛、心悸、耳鸣、视力模糊、失眠</p>
+          <p class="disease-tips"><strong>预防建议：</strong>低盐饮食（每天<6g）、规律运动、控制体重、戒烟限酒、定期监测血压</p>
+          <p class="disease-warning">&#9888; 持续血压≥140/90mmHg需及时就医</p>
+          <div style="margin-top:12px;"><a href="#detail-hypertension" class="btn btn-sm btn-outline">查看详情</a></div>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#9678;</div>
+          <h4>糖尿病</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>多饮多食多尿、体重减轻、疲乏无力、视力下降、伤口难愈合</p>
+          <p class="disease-tips"><strong>预防建议：</strong>控制糖分摄入、坚持每周150分钟运动、保持健康体重、定期监测血糖</p>
+          <p class="disease-warning">&#9888; 空腹血糖≥7.0mmol/L或餐后2h≥11.1需警惕</p>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#9730;</div>
+          <h4>流行性感冒</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>高热（39-40℃）、咳嗽、咽痛、全身酸痛、乏力、头痛</p>
+          <p class="disease-tips"><strong>预防建议：</strong>每年接种流感疫苗、勤洗手、戴口罩、保持室内通风、增强免疫力</p>
+          <p class="disease-warning">&#9888; 持续高热不退或出现呼吸困难需立即就医</p>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#9672;</div>
+          <h4>颈椎病</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>颈肩酸痛、手臂麻木、头晕恶心、走路不稳、视力模糊</p>
+          <p class="disease-tips"><strong>预防建议：</strong>保持正确坐姿、每45分钟活动颈部、避免长时间低头、枕头高度适中</p>
+          <p class="disease-warning">&#9888; 出现手脚麻木无力或行走困难需及时就诊</p>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#9790;</div>
+          <h4>失眠症</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>入睡困难（>30分钟）、睡眠浅易醒、早醒、日间困倦乏力</p>
+          <p class="disease-tips"><strong>预防建议：</strong>规律作息、睡前1小时远离手机、适度运动、营造舒适安静睡眠环境</p>
+          <p class="disease-warning">&#9888; 持续失眠超过一个月且影响日常生活建议就医</p>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#10048;</div>
+          <h4>过敏性鼻炎</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>阵发性鼻痒、打喷嚏、流大量清涕、鼻塞、眼痒流泪</p>
+          <p class="disease-tips"><strong>预防建议：</strong>避免接触花粉/尘螨等过敏原、使用空气净化器、定期清洗床品</p>
+          <p class="disease-warning">&#9888; 长期不愈可能诱发哮喘，需及时治疗</p>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#127781;</div>
+          <h4>冠心病</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>胸痛胸闷、心悸气短、活动后加重、左肩背部放射痛</p>
+          <p class="disease-tips"><strong>预防建议：</strong>低脂低盐饮食、控制血压血糖、戒烟、规律运动、定期体检</p>
+          <p class="disease-warning">&#9888; 突发剧烈胸痛持续不缓解，立即拨打120</p>
+        </div>
+        <div class="disease-card">
+          <div class="disease-icon">&#127973;</div>
+          <h4>慢性胃炎</h4>
+          <p class="disease-symptoms"><strong>常见症状：</strong>上腹不适、饱胀感、反酸嗳气、食欲不振、恶心</p>
+          <p class="disease-tips"><strong>预防建议：</strong>规律进餐、少食多餐、避免辛辣刺激食物、戒烟限酒、保持心情愉快</p>
+          <p class="disease-warning">&#9888; 出现黑便或呕血需立即就医</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-card" id="detail-hypertension">
+        <h3>&#9829; 高血压 — 深度解读</h3>
+        <p style="font-size:15px;line-height:2;color:var(--text-light);">
+          <strong>什么是高血压？</strong><br>
+          高血压是指以体循环动脉血压（收缩压/舒张压）持续增高为主要特征的慢性疾病。在未使用降压药的情况下，非同日3次测量诊室血压，收缩压（SBP）≥140mmHg和/或舒张压（DBP）≥90mmHg即可诊断为高血压。<br><br>
+          <strong>危害：</strong>长期高血压会损伤心、脑、肾等重要器官，可导致脑卒中、心肌梗死、心力衰竭、肾功能衰竭等严重并发症。<br><br>
+          <strong>就医建议：</strong>如发现血压持续偏高，应及时就诊心内科或高血压专科门诊。医生会根据情况制定个性化的降压方案。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>关于康颐</h4>
+      <p>康颐健康致力于为全国人民提供便捷、专业、可信赖的在线医疗服务，让优质医疗资源触手可及。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速链接</h4>
+      <ul>
+        <li><a href="appointment.html">在线预约</a></li>
+        <li><a href="doctors.html">医生团队</a></li>
+        <li><a href="disease.html">病症科普</a></li>
+        <li><a href="news.html">健康资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>服务声明</h4>
+      <ul>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">就医指南</a></li>
+        <li><a href="contact.html">投诉建议</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关注我们</h4>
+      <p>微信公众号：康颐健康</p>
+      <p>微博：@康颐健康</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 康颐健康 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

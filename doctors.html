@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医生团队 - 康颐健康</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">康颐健康</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link active">医生团队</a>
+      <a href="disease.html" class="nav-link">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>医生团队</h1>
+    <p>汇聚全国三甲医院专家，所有医生实名认证</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span><span>医生团队</span>
+    </div>
+
+    <div class="filter-bar">
+      <div class="search-box"><input type="text" placeholder="搜索医生姓名、科室..."></div>
+      <select>
+        <option>全部科室</option><option>内科</option><option>外科</option>
+        <option>儿科</option><option>妇科</option><option>骨科</option>
+        <option>皮肤科</option><option>中医科</option><option>眼科</option>
+      </select>
+      <select>
+        <option>全部职称</option><option>主任医师</option><option>副主任医师</option><option>主治医师</option>
+      </select>
+    </div>
+
+    <div class="doctor-list-item">
+      <div class="doctor-list-avatar dr-1">张</div>
+      <div class="doctor-list-info">
+        <h4>张明远 <span style="font-size:13px;color:var(--primary);">主任医师</span></h4>
+        <p class="meta">心内科 · 北京协和医院 · 从业30年</p>
+        <p class="desc">擅长：冠心病、高血压、心力衰竭、心律失常等心血管疾病的诊断与治疗。中国医师协会心血管分会委员。</p>
+        <div class="doctor-tags">
+          <span>心脏病</span><span>高血压</span><span>冠心病</span><span>心力衰竭</span>
+        </div>
+      </div>
+      <div class="doctor-list-right">
+        <p class="price">图文问诊</p>
+        <p class="fee">¥150</p>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="margin-top:8px;">预约挂号</a>
+      </div>
+    </div>
+
+    <div class="doctor-list-item">
+      <div class="doctor-list-avatar dr-2">李</div>
+      <div class="doctor-list-info">
+        <h4>李慧芳 <span style="font-size:13px;color:var(--primary);">副主任医师</span></h4>
+        <p class="meta">儿科 · 上海儿童医学中心 · 从业15年</p>
+        <p class="desc">擅长：小儿呼吸系统疾病（哮喘、肺炎）、消化系统疾病及儿童过敏性疾病。儿童健康管理专家。</p>
+        <div class="doctor-tags">
+          <span>小儿呼吸</span><span>消化</span><span>过敏</span><span>儿童保健</span>
+        </div>
+      </div>
+      <div class="doctor-list-right">
+        <p class="price">图文问诊</p>
+        <p class="fee">¥120</p>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="margin-top:8px;">预约挂号</a>
+      </div>
+    </div>
+
+    <div class="doctor-list-item">
+      <div class="doctor-list-avatar dr-3">王</div>
+      <div class="doctor-list-info">
+        <h4>王建国 <span style="font-size:13px;color:var(--primary);">主任医师</span></h4>
+        <p class="meta">骨科 · 北京大学第三医院 · 从业25年</p>
+        <p class="desc">擅长：关节置换术、颈椎病、腰椎间盘突出、脊柱微创手术。已成功完成关节手术3000+例。</p>
+        <div class="doctor-tags">
+          <span>关节置换</span><span>颈椎病</span><span>腰椎病</span><span>脊柱微创</span>
+        </div>
+      </div>
+      <div class="doctor-list-right">
+        <p class="price">图文问诊</p>
+        <p class="fee">¥200</p>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="margin-top:8px;">预约挂号</a>
+      </div>
+    </div>
+
+    <div class="doctor-list-item">
+      <div class="doctor-list-avatar dr-4">赵</div>
+      <div class="doctor-list-info">
+        <h4>赵丽娟 <span style="font-size:13px;color:var(--primary);">主任医师</span></h4>
+        <p class="meta">中医科 · 广东省中医院 · 从业28年</p>
+        <p class="desc">擅长：中医针灸推拿、中药调理、慢性病中医治疗、亚健康状态调理。国家级名老中医传承人。</p>
+        <div class="doctor-tags">
+          <span>针灸</span><span>亚健康</span><span>慢性病</span><span>中药调理</span>
+        </div>
+      </div>
+      <div class="doctor-list-right">
+        <p class="price">图文问诊</p>
+        <p class="fee">¥100</p>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="margin-top:8px;">预约挂号</a>
+      </div>
+    </div>
+
+    <div class="doctor-list-item">
+      <div class="doctor-list-avatar" style="background:linear-gradient(135deg,#d4734a,#c0504a);">刘</div>
+      <div class="doctor-list-info">
+        <h4>刘志强 <span style="font-size:13px;color:var(--primary);">副主任医师</span></h4>
+        <p class="meta">消化内科 · 复旦大学附属中山医院 · 从业18年</p>
+        <p class="desc">擅长：胃炎、胃溃疡、炎症性肠病、功能性消化不良等消化系统疾病的诊断与治疗。</p>
+        <div class="doctor-tags">
+          <span>胃炎</span><span>肠炎</span><span>消化不良</span><span>胃镜</span>
+        </div>
+      </div>
+      <div class="doctor-list-right">
+        <p class="price">图文问诊</p>
+        <p class="fee">¥130</p>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="margin-top:8px;">预约挂号</a>
+      </div>
+    </div>
+
+    <div class="doctor-list-item">
+      <div class="doctor-list-avatar" style="background:linear-gradient(135deg,#5b8cb8,#6b7db3);">陈</div>
+      <div class="doctor-list-info">
+        <h4>陈敏华 <span style="font-size:13px;color:var(--primary);">主任医师</span></h4>
+        <p class="meta">皮肤科 · 上海华山医院 · 从业22年</p>
+        <p class="desc">擅长：湿疹、银屑病、痤疮、皮肤肿瘤、过敏性皮肤病等皮肤科常见及疑难疾病的诊治。</p>
+        <div class="doctor-tags">
+          <span>湿疹</span><span>银屑病</span><span>痤疮</span><span>过敏</span>
+        </div>
+      </div>
+      <div class="doctor-list-right">
+        <p class="price">图文问诊</p>
+        <p class="fee">¥160</p>
+        <a href="appointment.html" class="btn btn-primary btn-sm" style="margin-top:8px;">预约挂号</a>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <span class="active">1</span>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">→</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>关于康颐</h4>
+      <p>康颐健康致力于为全国人民提供便捷、专业、可信赖的在线医疗服务，让优质医疗资源触手可及。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速链接</h4>
+      <ul>
+        <li><a href="appointment.html">在线预约</a></li>
+        <li><a href="doctors.html">医生团队</a></li>
+        <li><a href="disease.html">病症科普</a></li>
+        <li><a href="news.html">健康资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>服务声明</h4>
+      <ul>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">就医指南</a></li>
+        <li><a href="contact.html">投诉建议</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关注我们</h4>
+      <p>微信公众号：康颐健康</p>
+      <p>微博：@康颐健康</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 康颐健康 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

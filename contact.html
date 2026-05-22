@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 - 康颐健康</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">康颐健康</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="disease.html" class="nav-link">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="contact.html" class="nav-link active">联系我们</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>联系我们</h1>
+    <p>如有任何疑问，请随时与我们联系</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span><span>联系我们</span>
+    </div>
+
+    <div class="tabs" style="max-width:800px;margin:0 auto 32px;">
+      <button class="tab-btn active" data-tab="tab-contact">在线留言</button>
+      <button class="tab-btn" data-tab="tab-faq">常见问题</button>
+    </div>
+
+    <div class="tab-content active" id="tab-contact">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">&#128222;</span>
+            <div><strong>服务热线</strong><p>400-888-9999</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128231;</span>
+            <div><strong>电子邮箱</strong><p>service@kangyi.com</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128205;</span>
+            <div><strong>办公地址</strong><p>北京市海淀区中关村科技园健康大厦</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128337;</span>
+            <div><strong>服务时间</strong><p>周一至周日 8:00-22:00</p></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128172;</span>
+            <div><strong>微信公众号</strong><p>康颐健康（kangyihealth）</p></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <h4 style="margin-bottom:16px;">给我们留言</h4>
+          <div class="form-group">
+            <input type="text" placeholder="您的姓名" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="联系电话或邮箱" required>
+          </div>
+          <div class="form-group">
+            <select style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;background:var(--bg);">
+              <option>留言类型：选择分类</option>
+              <option>预约咨询</option>
+              <option>投诉建议</option>
+              <option>合作申请</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" placeholder="请详细描述您的问题..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">提交留言</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-faq">
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">如何在线预约挂号？</div>
+          <div class="faq-a">您可以在首页点击"在线预约"或直接访问预约页面，选择科室→选择医生→选择时间→填写信息→确认预约，三步完成挂号。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">预约后如何取消？</div>
+          <div class="faq-a">您可以在就诊前24小时内在个人中心取消预约。超过时间请拨打客服电话400-888-9999处理。预约未取消且未就诊视为爽约，可能影响后续预约功能。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">预约需要收费吗？</div>
+          <div class="faq-a">平台本身不收取任何预约服务费用，您支付的仅为医院的挂号费。不同医院、不同级别医生的挂号费用不同，以医院公示价格为准。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何查看医生的评价？</div>
+          <div class="faq-a">在医生详情页面，您可以查看其他患者对该医生的真实评价，包括星级评分、文字评论和标签（如"态度好""专业""耐心"等）。所有评价均来自真实就诊患者。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">平台的医生都来自哪些医院？</div>
+          <div class="faq-a">合作医生主要来自全国三甲医院，覆盖北京协和医院、北京大学第三医院、上海华山医院、广东省中医院等千余家知名医疗机构。所有医生均经过实名认证和资质审核。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">个人隐私如何保障？</div>
+          <div class="faq-a">我们严格遵守《个人信息保护法》，您的个人信息和健康数据均采用加密传输和存储，未经您的授权，我们不会向任何第三方泄露您的信息。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>关于康颐</h4>
+      <p>康颐健康致力于为全国人民提供便捷、专业、可信赖的在线医疗服务，让优质医疗资源触手可及。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速链接</h4>
+      <ul>
+        <li><a href="appointment.html">在线预约</a></li>
+        <li><a href="doctors.html">医生团队</a></li>
+        <li><a href="disease.html">病症科普</a></li>
+        <li><a href="news.html">健康资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>服务声明</h4>
+      <ul>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">就医指南</a></li>
+        <li><a href="contact.html">投诉建议</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关注我们</h4>
+      <p>微信公众号：康颐健康</p>
+      <p>微博：@康颐健康</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 康颐健康 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog">
+    <div class="modal-icon">&#10003;</div>
+    <h3>提交成功！</h3>
+    <p id="modalMsg">留言已提交，客服会在24小时内与您联系。</p>
+    <p class="modal-tip">如有紧急问题，请拨打服务热线 400-888-9999</p>
+    <button class="btn btn-primary" id="modalClose">知道了</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
