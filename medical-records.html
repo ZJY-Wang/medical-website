@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>就诊记录查询 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="patient-dashboard.html" class="nav-link">个人中心</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>就诊记录查询</h1>
+    <p>随时查看您的就诊记录、检查报告和处方信息</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span><a href="patient-dashboard.html">个人中心</a><span>/</span><span>就诊记录</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-visits">就诊记录</button>
+      <button class="tab-btn" data-tab="tab-reports">检查报告</button>
+      <button class="tab-btn" data-tab="tab-prescriptions">处方记录</button>
+      <button class="tab-btn" data-tab="tab-bills">缴费记录</button>
+    </div>
+
+    <!-- 就诊记录 -->
+    <div class="tab-content active" id="tab-visits">
+      <div class="filter-bar">
+        <div class="search-box"><input type="text" placeholder="搜索科室、医生..."></div>
+        <select><option>全部时间</option><option>近1个月</option><option>近3个月</option><option>近1年</option></select>
+      </div>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>就诊日期</th><th>科室</th><th>医生</th><th>诊断</th><th>类型</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>2026-05-12</td><td>骨科</td><td>王建国 主任医师</td><td>腰椎间盘突出</td>
+                <td><span class="status-badge info">复诊</span></td><td><span class="status-badge success">已完成</span></td>
+                <td><button class="btn btn-sm btn-outline" onclick="showToast('正在加载病历详情...','info')">查看详情</button></td>
+              </tr>
+              <tr>
+                <td>2026-04-30</td><td>中医科</td><td>赵丽娟 主任医师</td><td>亚健康状态调理</td>
+                <td><span class="status-badge warning">初诊</span></td><td><span class="status-badge success">已完成</span></td>
+                <td><button class="btn btn-sm btn-outline" onclick="showToast('正在加载病历详情...','info')">查看详情</button></td>
+              </tr>
+              <tr>
+                <td>2026-04-15</td><td>心内科</td><td>张明远 主任医师</td><td>高血压2级</td>
+                <td><span class="status-badge info">复诊</span></td><td><span class="status-badge success">已完成</span></td>
+                <td><button class="btn btn-sm btn-outline" onclick="showToast('正在加载病历详情...','info')">查看详情</button></td>
+              </tr>
+              <tr>
+                <td>2026-03-20</td><td>消化内科</td><td>刘志强 副主任医师</td><td>慢性胃炎</td>
+                <td><span class="status-badge warning">初诊</span></td><td><span class="status-badge success">已完成</span></td>
+                <td><button class="btn btn-sm btn-outline" onclick="showToast('正在加载病历详情...','info')">查看详情</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 检查报告 -->
+    <div class="tab-content" id="tab-reports">
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>报告编号</th><th>检查项目</th><th>检查日期</th><th>科室</th><th>报告状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>RPT20260512001</td><td>腰椎CT平扫</td><td>2026-05-12</td><td>骨科</td>
+                <td><span class="status-badge success">已出具</span></td>
+                <td><button class="btn btn-sm btn-outline">查看报告</button></td>
+              </tr>
+              <tr>
+                <td>RPT20260415002</td><td>心电图 + 心脏彩超</td><td>2026-04-15</td><td>心内科</td>
+                <td><span class="status-badge success">已出具</span></td>
+                <td><button class="btn btn-sm btn-outline">查看报告</button></td>
+              </tr>
+              <tr>
+                <td>RPT20260415003</td><td>血常规 + 生化全套</td><td>2026-04-15</td><td>心内科</td>
+                <td><span class="status-badge success">已出具</span></td>
+                <td><button class="btn btn-sm btn-outline">查看报告</button></td>
+              </tr>
+              <tr>
+                <td>RPT20260320004</td><td>胃镜检查</td><td>2026-03-20</td><td>消化内科</td>
+                <td><span class="status-badge success">已出具</span></td>
+                <td><button class="btn btn-sm btn-outline">查看报告</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 处方记录 -->
+    <div class="tab-content" id="tab-prescriptions">
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>处方编号</th><th>药品名称</th><th>规格用量</th><th>开具日期</th><th>开具医生</th><th>状态</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>RX20260415001</td><td>苯磺酸氨氯地平片、厄贝沙坦片</td><td>qd×30天</td><td>2026-04-15</td><td>张明远</td>
+                <td><span class="status-badge success">已取药</span></td>
+              </tr>
+              <tr>
+                <td>RX20260320002</td><td>奥美拉唑肠溶胶囊、铝碳酸镁片</td><td>bid×14天</td><td>2026-03-20</td><td>刘志强</td>
+                <td><span class="status-badge success">已取药</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 缴费记录 -->
+    <div class="tab-content" id="tab-bills">
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>账单编号</th><th>项目</th><th>金额</th><th>医保报销</th><th>自付</th><th>支付方式</th><th>日期</th><th>状态</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>BILL20260415001</td><td>心内科挂号+检查+药费</td><td>¥616.50</td><td>¥431.55</td><td>¥184.95</td><td>微信支付</td>
+                <td>2026-04-15</td><td><span class="status-badge success">已支付</span></td>
+              </tr>
+              <tr>
+                <td>BILL20260320002</td><td>消化内科挂号+检查+药费</td><td>¥425.00</td><td>¥297.50</td><td>¥127.50</td><td>支付宝</td>
+                <td>2026-03-20</td><td><span class="status-badge success">已支付</span></td>
+              </tr>
+              <tr>
+                <td>BILL20260526003</td><td>骨科复诊挂号费</td><td>¥50.00</td><td>¥35.00</td><td>¥15.00</td><td>—</td>
+                <td>2026-05-26</td><td><span class="status-badge warning">待支付</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col"><h4>关于大冲村诊所</h4><p>大冲村诊所-健康医疗致力于为全国人民提供便捷、专业、可信赖的在线医疗服务。</p></div>
+    <div class="footer-col"><h4>快速链接</h4><ul><li><a href="appointment.html">在线预约</a></li><li><a href="doctors.html">医生团队</a></li><li><a href="disease.html">病症科普</a></li><li><a href="news.html">健康资讯</a></li></ul></div>
+    <div class="footer-col"><h4>服务声明</h4><ul><li><a href="#">隐私政策</a></li><li><a href="#">用户协议</a></li><li><a href="#">就医指南</a></li><li><a href="contact.html">投诉建议</a></li></ul></div>
+    <div class="footer-col"><h4>关注我们</h4><p>微信公众号：大冲村诊所-健康医疗</p><p>微博：@大冲村诊所-健康医疗</p></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 大冲村诊所-健康医疗 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p></div>
+</footer>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

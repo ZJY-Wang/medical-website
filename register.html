@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用户注册 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="disease.html" class="nav-link">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="auth-section">
+  <div class="auth-card">
+    <h2>创建账号</h2>
+    <p class="auth-subtitle">注册成为大冲村诊所-健康医疗用户</p>
+
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="regUsername">用户名</label>
+        <input type="text" id="regUsername" placeholder="请设置用户名（演示：任意输入）" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="regPassword">密码</label>
+        <input type="password" id="regPassword" placeholder="请设置密码（演示：≥3位）" autocomplete="new-password">
+      </div>
+      <div class="form-group">
+        <label for="regConfirm">确认密码</label>
+        <input type="password" id="regConfirm" placeholder="请再次输入密码" autocomplete="new-password">
+        <div class="auth-error" id="regError"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">注 册</button>
+    </form>
+
+    <div class="auth-links">
+      已有账号？<a href="login.html">立即登录</a> | <a href="index.html">返回首页</a>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:12px;">
+      演示提示：填写任意用户名和密码即可完成注册
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>关于大冲村诊所</h4>
+      <p>大冲村诊所-健康医疗致力于为全国人民提供便捷、专业、可信赖的在线医疗服务，让优质医疗资源触手可及。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速链接</h4>
+      <ul>
+        <li><a href="appointment.html">在线预约</a></li>
+        <li><a href="doctors.html">医生团队</a></li>
+        <li><a href="disease.html">病症科普</a></li>
+        <li><a href="news.html">健康资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>服务声明</h4>
+      <ul>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">就医指南</a></li>
+        <li><a href="contact.html">投诉建议</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关注我们</h4>
+      <p>微信公众号：大冲村诊所-健康医疗</p>
+      <p>微博：@大冲村诊所-健康医疗</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 大冲村诊所-健康医疗 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p>
+  </div>
+</footer>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

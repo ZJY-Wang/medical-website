@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医生工作台 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="patient-dashboard.html" class="nav-link">患者端</a>
+      <a href="doctor-workstation.html" class="nav-link active">医生工作台</a>
+      <a href="admin-panel.html" class="nav-link">管理后台</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-user">
+      <div class="sidebar-avatar">张</div>
+      <div class="sidebar-user-info">
+        <strong>张明远 医生</strong>
+        <span>主任医师 · 心内科</span>
+      </div>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="#" class="active" data-section="today"><span class="nav-icon">🩺</span>今日接诊</a>
+      <a href="#" data-section="records"><span class="nav-icon">📋</span>病历管理</a>
+      <a href="#" data-section="prescriptions"><span class="nav-icon">💊</span>处方管理</a>
+      <a href="#" data-section="schedule"><span class="nav-icon">📅</span>我的排班</a>
+      <a href="#" id="logoutBtn" style="margin-top:24px;color:#d4734a;"><span class="nav-icon">🚪</span>退出登录</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <!-- Today's patients -->
+    <div class="admin-section" id="section-today">
+      <div class="workstation-header">
+        <h2>今日接诊 <span style="font-size:14px;color:var(--text-muted);">2026年5月26日 周二</span></h2>
+        <div>
+          <span style="font-size:14px;color:var(--text-light);">已接诊 <strong style="color:var(--primary);">8</strong>/15 人</span>
+        </div>
+      </div>
+
+      <div class="workstation-grid">
+        <div class="workstation-panel">
+          <h3>待诊患者列表</h3>
+          <div class="patient-list">
+            <div class="patient-list-item selected" data-name="王建国" data-age="52" data-gender="男">
+              <div class="patient-avatar">王</div>
+              <div class="patient-info">
+                <div class="patient-name">王建国</div>
+                <div class="patient-meta">男 · 52岁 · 复诊 · 高血压</div>
+              </div>
+              <div class="queue-num">9</div>
+            </div>
+            <div class="patient-list-item" data-name="李晓芳" data-age="38" data-gender="女">
+              <div class="patient-avatar">李</div>
+              <div class="patient-info">
+                <div class="patient-name">李晓芳</div>
+                <div class="patient-meta">女 · 38岁 · 初诊 · 心悸</div>
+              </div>
+              <div class="queue-num">10</div>
+            </div>
+            <div class="patient-list-item" data-name="赵志强" data-age="65" data-gender="男">
+              <div class="patient-avatar">赵</div>
+              <div class="patient-info">
+                <div class="patient-name">赵志强</div>
+                <div class="patient-meta">男 · 65岁 · 复诊 · 冠心病</div>
+              </div>
+              <div class="queue-num">11</div>
+            </div>
+            <div class="patient-list-item" data-name="刘美兰" data-age="45" data-gender="女">
+              <div class="patient-avatar">刘</div>
+              <div class="patient-info">
+                <div class="patient-name">刘美兰</div>
+                <div class="patient-meta">女 · 45岁 · 初诊 · 胸闷气短</div>
+              </div>
+              <div class="queue-num">12</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="workstation-panel">
+          <h3>病历录入 — <span id="selectedPatientName">王建国</span></h3>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;" id="selectedPatientInfo">男 | 52岁</p>
+
+          <form class="record-form" onsubmit="event.preventDefault();">
+            <div class="form-row">
+              <div class="form-group">
+                <label>主诉</label>
+                <input type="text" id="chiefComplaint" placeholder="患者主要症状描述" value="头晕伴心悸一周，加重两天">
+              </div>
+              <div class="form-group">
+                <label>现病史</label>
+                <input type="text" placeholder="发病时间、诱因、症状变化" value="一周前无明显诱因出现头晕">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>血压 (mmHg)</label><input type="text" value="155/95"></div>
+              <div class="form-group"><label>心率 (次/分)</label><input type="text" value="88"></div>
+            </div>
+            <div class="form-group" style="margin-bottom:12px;">
+              <label>诊断意见 <span class="ai-assist-badge" id="aiAssistBtn">🤖 AI辅助诊断</span></label>
+              <textarea id="recordText" placeholder="请输入诊断意见...">患者血压偏高，结合既往高血压病史，初步诊断为原发性高血压2级。建议调整降压药物方案，增加钙通道阻滞剂。</textarea>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px;">
+              <button class="quick-action-btn voice-btn" type="button" id="voiceRecordBtn" data-target="recordText">🎤 语音输入</button>
+            </div>
+            <div class="form-group" style="margin-bottom:12px;">
+              <label>处方</label>
+              <textarea placeholder="开具处方..." style="min-height:100px;">1. 苯磺酸氨氯地平片 5mg qd ×30天
+2. 厄贝沙坦片 150mg qd ×30天
+3. 建议低盐低脂饮食，每日监测血压</textarea>
+            </div>
+            <div style="display:flex;gap:12px;">
+              <button type="button" class="btn btn-primary" id="recordSubmit">提交病历</button>
+              <button type="button" class="btn btn-outline" onclick="window.print()">打印</button>
+              <button type="button" class="btn btn-outline" onclick="showToast('已叫号：王建国','success')">📢 叫号</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Records -->
+    <div class="admin-section" id="section-records" style="display:none;">
+      <h2>病历管理</h2>
+      <div class="filter-bar">
+        <div class="search-box"><input type="text" placeholder="搜索患者姓名或病历编号..."></div>
+        <select><option>全部日期</option><option>本周</option><option>本月</option></select>
+        <select><option>全部类型</option><option>初诊</option><option>复诊</option></select>
+      </div>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>病历编号</th><th>患者</th><th>诊断</th><th>日期</th><th>类型</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>MR20260526001</td><td>王建国</td><td>原发性高血压2级</td><td>2026-05-26</td><td><span class="status-badge info">复诊</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+              <tr><td>MR20260525003</td><td>陈小红</td><td>冠心病</td><td>2026-05-25</td><td><span class="status-badge warning">初诊</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+              <tr><td>MR20260525002</td><td>周伟</td><td>心律失常</td><td>2026-05-25</td><td><span class="status-badge info">复诊</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prescriptions -->
+    <div class="admin-section" id="section-prescriptions" style="display:none;">
+      <h2>处方管理</h2>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>处方编号</th><th>患者</th><th>药品</th><th>开具日期</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>RX20260526001</td><td>王建国</td><td>苯磺酸氨氯地平片、厄贝沙坦片</td><td>2026-05-26</td><td><span class="status-badge info">已开具</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+              <tr><td>RX20260525001</td><td>陈小红</td><td>阿司匹林肠溶片、瑞舒伐他汀</td><td>2026-05-25</td><td><span class="status-badge success">已取药</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="admin-section" id="section-schedule" style="display:none;">
+      <h2>我的排班</h2>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>日期</th><th>时段</th><th>科室</th><th>号源总数</th><th>已预约</th><th>剩余</th></tr></thead>
+            <tbody>
+              <tr><td>2026-05-26 (周二)</td><td>上午 08:00-12:00</td><td>心内科</td><td>15</td><td>15</td><td><span class="status-badge danger">0</span></td></tr>
+              <tr><td>2026-05-27 (周三)</td><td>全天 08:00-17:00</td><td>心内科</td><td>30</td><td>22</td><td><span class="status-badge warning">8</span></td></tr>
+              <tr><td>2026-05-28 (周四)</td><td>上午 08:00-12:00</td><td>心内科</td><td>15</td><td>5</td><td><span class="status-badge success">10</span></td></tr>
+              <tr><td>2026-05-29 (周五)</td><td>下午 13:00-17:00</td><td>心内科</td><td>15</td><td>0</td><td><span class="status-badge success">15</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog">
+    <div class="modal-icon">&#10003;</div>
+    <h3>病历提交成功！</h3>
+    <p id="modalMsg">病历已保存，处方已发送至药房审核。</p>
+    <p class="modal-tip">请继续接诊下一位患者</p>
+    <button class="btn btn-primary" id="modalClose">知道了</button>
+  </div>
+</div>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+(function() {
+  var navLinks = document.querySelectorAll('.dashboard-nav a[data-section]');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      this.classList.add('active');
+      var sectionId = this.getAttribute('data-section');
+      document.querySelectorAll('.admin-section').forEach(function(s) { s.style.display = 'none'; });
+      var target = document.getElementById('section-' + sectionId);
+      if (target) target.style.display = 'block';
+    });
+  });
+})();
+</script>
+</body>
+</html>

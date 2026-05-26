@@ -63,6 +63,17 @@
 
     <div style="max-width:800px;margin:0 auto;">
 
+      <!-- AI Symptom Checker -->
+      <div class="ai-checker">
+        <h4>🤖 AI智能分诊</h4>
+        <p style="font-size:14px;color:var(--text-light);margin-bottom:12px;">描述您的症状，AI将为您推荐合适的科室</p>
+        <div class="ai-input-row">
+          <input type="text" id="aiSymptomInput" placeholder="例如：头晕头痛三天，伴有恶心...">
+          <button class="btn btn-primary" id="aiCheckBtn">分析症状</button>
+        </div>
+        <div class="ai-result" id="aiResult"></div>
+      </div>
+
       <div class="tabs">
         <button class="tab-btn active" data-tab="tab-form">预约挂号</button>
         <button class="tab-btn" data-tab="tab-record">预约记录查询</button>
@@ -119,7 +130,11 @@
             <div class="form-row">
               <div class="form-group full">
                 <label for="symptom">病情简述（选填）</label>
-                <textarea id="symptom" rows="3" placeholder="请简要描述您的症状，便于医生提前了解..."></textarea>
+                <div class="voice-input-wrap">
+                  <textarea id="symptom" rows="3" placeholder="请简要描述您的症状，便于医生提前了解..."></textarea>
+                  <button type="button" class="voice-btn" data-target="symptom" title="语音输入">🎤</button>
+                  <span class="voice-status" id="voiceStatus">正在聆听...</span>
+                </div>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block">确认预约</button>
@@ -213,5 +228,10 @@
 </div>
 
 <script src="js/main.js"></script>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
 </body>
 </html>

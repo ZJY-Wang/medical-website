@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用户登录 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="disease.html" class="nav-link">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="auth-section">
+  <div class="auth-card">
+    <h2>用户登录</h2>
+    <p class="auth-subtitle">选择角色登录，体验完整的医疗服务</p>
+
+    <div class="auth-role-tabs">
+      <button class="auth-role-tab active" data-role="patient">🏠 患者</button>
+      <button class="auth-role-tab" data-role="doctor">👨‍⚕️ 医生</button>
+      <button class="auth-role-tab" data-role="admin">⚙️ 管理员</button>
+    </div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginUsername">用户名</label>
+        <input type="text" id="loginUsername" placeholder="请输入用户名（演示：任意输入即可）" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">密码</label>
+        <input type="password" id="loginPassword" placeholder="请输入密码（演示：任意输入≥3位）" autocomplete="current-password">
+        <div class="auth-error" id="loginError"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">登 录</button>
+    </form>
+
+    <div class="auth-links">
+      还没有账号？<a href="register.html">立即注册</a> | <a href="index.html">返回首页</a>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:12px;">
+      演示提示：选择角色后，输入任意用户名和≥3位密码即可登录
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>关于大冲村诊所</h4>
+      <p>大冲村诊所-健康医疗致力于为全国人民提供便捷、专业、可信赖的在线医疗服务，让优质医疗资源触手可及。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速链接</h4>
+      <ul>
+        <li><a href="appointment.html">在线预约</a></li>
+        <li><a href="doctors.html">医生团队</a></li>
+        <li><a href="disease.html">病症科普</a></li>
+        <li><a href="news.html">健康资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>服务声明</h4>
+      <ul>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">就医指南</a></li>
+        <li><a href="contact.html">投诉建议</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关注我们</h4>
+      <p>微信公众号：大冲村诊所-健康医疗</p>
+      <p>微博：@大冲村诊所-健康医疗</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 大冲村诊所-健康医疗 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p>
+  </div>
+</footer>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人中心 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="disease.html" class="nav-link">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+      <a href="login.html" class="nav-link nav-login">登录</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-user">
+      <div class="sidebar-avatar">患</div>
+      <div class="sidebar-user-info">
+        <strong>张先生</strong>
+        <span>患者 · 已认证</span>
+      </div>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="#" class="active" data-section="overview"><span class="nav-icon">📋</span>概览</a>
+      <a href="#" data-section="appointments"><span class="nav-icon">📅</span>我的预约</a>
+      <a href="medical-records.html"><span class="nav-icon">📄</span>就诊记录</a>
+      <a href="payment.html"><span class="nav-icon">💳</span>在线缴费</a>
+      <a href="#" data-section="profile"><span class="nav-icon">👤</span>个人信息</a>
+      <a href="#" data-section="messages"><span class="nav-icon">💬</span>消息通知 <span class="notif-badge" style="position:static;display:inline;" data-count="3"></span></a>
+      <a href="#" id="logoutBtn" style="margin-top:24px;color:#d4734a;"><span class="nav-icon">🚪</span>退出登录</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <!-- Overview -->
+    <div class="admin-section" id="section-overview">
+      <h2>欢迎回来，张先生 👋</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue">📅</div>
+          <div><div class="stat-value">2</div><div class="stat-label">进行中预约</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green">✅</div>
+          <div><div class="stat-value">12</div><div class="stat-label">已完成就诊</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon orange">💳</div>
+          <div><div class="stat-value">1</div><div class="stat-label">待缴费项</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple">📄</div>
+          <div><div class="stat-value">8</div><div class="stat-label">检查报告</div></div>
+        </div>
+      </div>
+
+      <div class="quick-actions">
+        <a href="appointment.html" class="quick-action-btn">📅 新建预约</a>
+        <a href="payment.html" class="quick-action-btn">💳 去缴费</a>
+        <a href="medical-records.html" class="quick-action-btn">📄 查看报告</a>
+        <button class="quick-action-btn" onclick="showToast('在线问诊功能开发中', 'info')">💬 在线问诊</button>
+      </div>
+    </div>
+
+    <!-- Appointments -->
+    <div class="admin-section" id="section-appointments" style="display:none;">
+      <h2>我的预约</h2>
+      <div class="data-table-wrapper">
+        <h3>预约记录</h3>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr><th>预约编号</th><th>科室</th><th>医生</th><th>就诊日期</th><th>时段</th><th>状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20260520001</td><td>心内科</td><td>张明远 主任医师</td><td>2026-05-25</td><td>上午 10:00-12:00</td>
+                <td><span class="status-badge info">已预约</span></td>
+                <td><button class="btn btn-sm btn-outline" onclick="showToast('已取消预约', 'info')">取消</button></td>
+              </tr>
+              <tr>
+                <td>20260518002</td><td>皮肤科</td><td>陈敏华 主任医师</td><td>2026-05-30</td><td>下午 14:00-16:00</td>
+                <td><span class="status-badge info">已预约</span></td>
+                <td><button class="btn btn-sm btn-outline" onclick="showToast('已取消预约', 'info')">取消</button></td>
+              </tr>
+              <tr>
+                <td>20260510003</td><td>骨科</td><td>王建国 主任医师</td><td>2026-05-12</td><td>上午 08:00-10:00</td>
+                <td><span class="status-badge success">已完成</span></td>
+                <td><a href="medical-records.html" class="btn btn-sm btn-outline">查看病历</a></td>
+              </tr>
+              <tr>
+                <td>20260428004</td><td>中医科</td><td>赵丽娟 主任医师</td><td>2026-04-30</td><td>下午 16:00-18:00</td>
+                <td><span class="status-badge success">已完成</span></td>
+                <td><a href="medical-records.html" class="btn btn-sm btn-outline">查看病历</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="admin-section" id="section-profile" style="display:none;">
+      <h2>个人信息</h2>
+      <div class="workstation-panel" style="max-width:600px;">
+        <form class="appointment-form" onsubmit="event.preventDefault();showToast('个人信息已更新','success');">
+          <div class="form-row">
+            <div class="form-group"><label>姓名</label><input type="text" value="张先生"></div>
+            <div class="form-group"><label>性别</label><select><option>男</option><option>女</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>出生日期</label><input type="date" value="1985-06-15"></div>
+            <div class="form-group"><label>联系电话</label><input type="tel" value="138****6789"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>身份证号</label><input type="text" value="310***********1234"></div>
+            <div class="form-group"><label>社保卡号</label><input type="text" value="SH0****5678"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full"><label>家庭地址</label><input type="text" value="上海市浦东新区张江高科技园区"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">保存修改</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="admin-section" id="section-messages" style="display:none;">
+      <h2>消息通知</h2>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr><th>时间</th><th>类型</th><th>内容</th><th>状态</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2026-05-24 14:30</td><td><span class="status-badge info">预约提醒</span></td>
+                <td>您预约的2026-05-25心内科张明远医生就诊提醒</td>
+                <td><span class="status-badge warning">未读</span></td>
+              </tr>
+              <tr>
+                <td>2026-05-22 09:00</td><td><span class="status-badge success">缴费通知</span></td>
+                <td>您有一笔待缴费项目：挂号费 ¥50</td>
+                <td><span class="status-badge warning">未读</span></td>
+              </tr>
+              <tr>
+                <td>2026-05-12 16:20</td><td><span class="status-badge neutral">报告通知</span></td>
+                <td>您的骨科检查报告已出，请及时查看</td>
+                <td><span class="status-badge neutral">已读</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+(function() {
+  var navLinks = document.querySelectorAll('.dashboard-nav a[data-section]');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      this.classList.add('active');
+      var sectionId = this.getAttribute('data-section');
+      document.querySelectorAll('.admin-section').forEach(function(s) { s.style.display = 'none'; });
+      var target = document.getElementById('section-' + sectionId);
+      if (target) target.style.display = 'block';
+    });
+  });
+})();
+</script>
+</body>
+</html>

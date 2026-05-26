@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理后台 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="patient-dashboard.html" class="nav-link">患者端</a>
+      <a href="doctor-workstation.html" class="nav-link">医生工作台</a>
+      <a href="admin-panel.html" class="nav-link active">管理后台</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-user">
+      <div class="sidebar-avatar">管</div>
+      <div class="sidebar-user-info">
+        <strong>系统管理员</strong>
+        <span>超级管理员</span>
+      </div>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="#" class="active" data-section="dashboard"><span class="nav-icon">📊</span>数据概览</a>
+      <a href="#" data-section="scheduling"><span class="nav-icon">📅</span>排班管理</a>
+      <a href="#" data-section="patients"><span class="nav-icon">👥</span>患者管理</a>
+      <a href="#" data-section="drugs"><span class="nav-icon">💊</span>药品库存</a>
+      <a href="#" data-section="reports"><span class="nav-icon">📈</span>统计报表</a>
+      <a href="#" data-section="feedback"><span class="nav-icon">📝</span>反馈处理</a>
+      <a href="#" id="logoutBtn" style="margin-top:24px;color:#d4734a;"><span class="nav-icon">🚪</span>退出登录</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <!-- Dashboard Overview -->
+    <div class="admin-section" id="section-dashboard">
+      <h2>系统数据概览</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue">📅</div>
+          <div><div class="stat-value">1,286</div><div class="stat-label">今日挂号量</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green">✅</div>
+          <div><div class="stat-value">876</div><div class="stat-label">今日已就诊</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon orange">🏥</div>
+          <div><div class="stat-value">48</div><div class="stat-label">在线医生数</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple">💰</div>
+          <div><div class="stat-value">¥128,560</div><div class="stat-label">今日营收</div></div>
+        </div>
+      </div>
+
+      <div class="workstation-grid">
+        <div class="workstation-panel">
+          <h3>挂号趋势（近7天）</h3>
+          <div style="display:flex;align-items:flex-end;gap:16px;height:200px;padding:16px 0;justify-content:space-around;">
+            <div style="text-align:center;"><div style="width:48px;height:120px;background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/20</span></div>
+            <div style="text-align:center;"><div style="width:48px;height:100px;background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/21</span></div>
+            <div style="text-align:center;"><div style="width:48px;height:140px;background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/22</span></div>
+            <div style="text-align:center;"><div style="width:48px;height:160px;background:linear-gradient(180deg,var(--secondary),var(--secondary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/23</span></div>
+            <div style="text-align:center;"><div style="width:48px;height:130px;background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/24</span></div>
+            <div style="text-align:center;"><div style="width:48px;height:90px;background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/25</span></div>
+            <div style="text-align:center;"><div style="width:48px;height:170px;background:linear-gradient(180deg,var(--primary),var(--primary-light));border-radius:8px 8px 0 0;"></div><span style="font-size:12px;margin-top:8px;display:block;">5/26</span></div>
+          </div>
+        </div>
+        <div class="workstation-panel">
+          <h3>科室挂号占比</h3>
+          <div style="padding:16px 0;">
+            <div style="margin-bottom:16px;"><span style="font-size:14px;">心内科</span><div style="background:#eee;border-radius:8px;height:24px;margin-top:4px;"><div style="background:var(--primary);width:28%;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:600;">28%</div></div></div>
+            <div style="margin-bottom:16px;"><span style="font-size:14px;">儿科</span><div style="background:#eee;border-radius:8px;height:24px;margin-top:4px;"><div style="background:var(--secondary);width:22%;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:600;">22%</div></div></div>
+            <div style="margin-bottom:16px;"><span style="font-size:14px;">骨科</span><div style="background:#eee;border-radius:8px;height:24px;margin-top:4px;"><div style="background:#d4734a;width:18%;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:600;">18%</div></div></div>
+            <div style="margin-bottom:16px;"><span style="font-size:14px;">皮肤科</span><div style="background:#eee;border-radius:8px;height:24px;margin-top:4px;"><div style="background:#8b6baa;width:15%;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:600;">15%</div></div></div>
+            <div><span style="font-size:14px;">其他科室</span><div style="background:#eee;border-radius:8px;height:24px;margin-top:4px;"><div style="background:#e8b44d;width:17%;height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:12px;font-weight:600;">17%</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scheduling -->
+    <div class="admin-section" id="section-scheduling" style="display:none;">
+      <h2>排班管理</h2>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>医生</th><th>科室</th><th>职称</th><th>排班日期</th><th>时段</th><th>号源</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>张明远</td><td>心内科</td><td>主任医师</td><td>2026-05-26</td><td>上午</td><td>15</td><td><span class="status-badge info">出诊中</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>
+              <tr><td>李慧芳</td><td>儿科</td><td>副主任医师</td><td>2026-05-26</td><td>全天</td><td>30</td><td><span class="status-badge info">出诊中</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>
+              <tr><td>王建国</td><td>骨科</td><td>主任医师</td><td>2026-05-27</td><td>下午</td><td>15</td><td><span class="status-badge neutral">待出诊</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>
+              <tr><td>赵丽娟</td><td>中医科</td><td>主任医师</td><td>2026-05-27</td><td>上午</td><td>20</td><td><span class="status-badge neutral">待出诊</span></td><td><button class="btn btn-sm btn-outline">编辑</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient Management -->
+    <div class="admin-section" id="section-patients" style="display:none;">
+      <h2>患者管理</h2>
+      <div class="filter-bar">
+        <div class="search-box"><input type="text" placeholder="搜索患者姓名/手机号..."></div>
+        <select><option>全部状态</option><option>活跃</option><option>非活跃</option></select>
+      </div>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>患者ID</th><th>姓名</th><th>性别</th><th>年龄</th><th>手机号</th><th>累计就诊</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>P20240001</td><td>王建国</td><td>男</td><td>52</td><td>138****6789</td><td>12次</td><td><span class="status-badge success">活跃</span></td><td><button class="btn btn-sm btn-outline">详情</button></td></tr>
+              <tr><td>P20240056</td><td>李晓芳</td><td>女</td><td>38</td><td>139****8901</td><td>3次</td><td><span class="status-badge success">活跃</span></td><td><button class="btn btn-sm btn-outline">详情</button></td></tr>
+              <tr><td>P20230189</td><td>周伟</td><td>男</td><td>28</td><td>136****2345</td><td>1次</td><td><span class="status-badge neutral">非活跃</span></td><td><button class="btn btn-sm btn-outline">详情</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drug Inventory -->
+    <div class="admin-section" id="section-drugs" style="display:none;">
+      <h2>药品库存管理</h2>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>药品编号</th><th>药品名称</th><th>规格</th><th>库存量</th><th>单位</th><th>有效期</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>D001</td><td>苯磺酸氨氯地平片</td><td>5mg×28片</td><td>2,500</td><td>盒</td><td>2027-06</td><td><span class="status-badge success">充足</span></td><td><button class="btn btn-sm btn-outline">入库</button></td></tr>
+              <tr><td>D002</td><td>厄贝沙坦片</td><td>150mg×28片</td><td>1,800</td><td>盒</td><td>2027-03</td><td><span class="status-badge success">充足</span></td><td><button class="btn btn-sm btn-outline">入库</button></td></tr>
+              <tr><td>D003</td><td>阿司匹林肠溶片</td><td>100mg×30片</td><td>320</td><td>盒</td><td>2026-12</td><td><span class="status-badge warning">偏低</span></td><td><button class="btn btn-sm btn-outline">入库</button></td></tr>
+              <tr><td>D004</td><td>瑞舒伐他汀钙片</td><td>10mg×7片</td><td>85</td><td>盒</td><td>2026-09</td><td><span class="status-badge danger">告急</span></td><td><button class="btn btn-sm btn-primary">紧急补货</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="admin-section" id="section-reports" style="display:none;">
+      <h2>统计报表</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue">📅</div>
+          <div><div class="stat-value">32,580</div><div class="stat-label">本月挂号总量</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green">💊</div>
+          <div><div class="stat-value">18,920</div><div class="stat-label">本月处方量</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon orange">💰</div>
+          <div><div class="stat-value">¥2,856,000</div><div class="stat-label">本月营收</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple">⭐</div>
+          <div><div class="stat-value">98.2%</div><div class="stat-label">患者满意度</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div class="admin-section" id="section-feedback" style="display:none;">
+      <h2>反馈处理</h2>
+      <div class="data-table-wrapper">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead><tr><th>编号</th><th>用户</th><th>类型</th><th>内容</th><th>时间</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr><td>FB20260522</td><td>王先生</td><td><span class="status-badge info">建议</span></td><td>希望增加在线支付医保结算功能</td><td>2026-05-22</td><td><span class="status-badge warning">待处理</span></td><td><button class="btn btn-sm btn-outline">回复</button></td></tr>
+              <tr><td>FB20260520</td><td>李女士</td><td><span class="status-badge danger">投诉</span></td><td>预约后医生临时停诊未及时通知</td><td>2026-05-20</td><td><span class="status-badge success">已处理</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+              <tr><td>FB20260518</td><td>张先生</td><td><span class="status-badge info">建议</span></td><td>适老版字体可以再大一些</td><td>2026-05-18</td><td><span class="status-badge success">已处理</span></td><td><button class="btn btn-sm btn-outline">查看</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
