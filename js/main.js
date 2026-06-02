@@ -453,13 +453,54 @@
 // ===== Payment Method Selection =====
 (function() {
   var paymentMethods = document.querySelectorAll('.payment-method');
+  var offlineInfo = document.getElementById('offlinePaymentInfo');
+  var onlineNotice = document.getElementById('onlinePaymentNotice');
+  var confirmBtn = document.getElementById('confirmPaymentBtn');
+
   paymentMethods.forEach(function(m) {
     m.addEventListener('click', function() {
       paymentMethods.forEach(function(pm) { pm.classList.remove('selected'); });
       this.classList.add('selected');
+
+      var paymentType = this.getAttribute('data-payment');
+
+      // 切换线下缴费说明区域
+      if (offlineInfo && onlineNotice && confirmBtn) {
+        if (paymentType === 'offline') {
+          offlineInfo.style.display = 'block';
+          onlineNotice.style.display = 'none';
+          confirmBtn.textContent = '确认选择线下缴费';
+          confirmBtn.style.background = 'var(--accent)';
+          confirmBtn.style.color = '#fff';
+        } else {
+          offlineInfo.style.display = 'none';
+          onlineNotice.style.display = '';
+          confirmBtn.textContent = '确认支付 ¥184.95';
+          confirmBtn.style.background = '';
+          confirmBtn.style.color = '';
+        }
+      }
     });
   });
 })();
+
+// ===== Payment Confirm Handler =====
+function handlePaymentConfirm() {
+  var selectedMethod = document.querySelector('.payment-method.selected');
+  var paymentType = selectedMethod ? selectedMethod.getAttribute('data-payment') : 'wechat';
+
+  if (paymentType === 'offline') {
+    showToast('已选择线下缴费，请在就诊当日前往诊所收费窗口缴纳费用。', 'success');
+    setTimeout(function() {
+      window.location.href = 'patient-dashboard.html';
+    }, 2000);
+  } else {
+    showToast('支付成功！¥184.95 已支付', 'success');
+    setTimeout(function() {
+      window.location.href = 'patient-dashboard.html';
+    }, 1500);
+  }
+}
 
 // ===== Toast Notification =====
 function showToast(message, type) {

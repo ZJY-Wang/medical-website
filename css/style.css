@@ -1619,9 +1619,102 @@ body.a11y-high-contrast .hero { background: #fff; }
   .workstation-grid { grid-template-columns: 1fr; }
   .dashboard-main { padding: 20px 16px; }
 }
+/* ===== Offline Payment Section ===== */
+.offline-payment-info {
+  margin-bottom: 8px;
+}
+.offline-payment-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  border: 2px solid var(--accent);
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.offline-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--accent);
+}
+.offline-header .offline-icon {
+  font-size: 28px;
+}
+.offline-header h4 {
+  font-size: 18px;
+  color: var(--text);
+}
+.offline-intro {
+  font-size: 15px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.offline-intro strong {
+  color: var(--primary);
+}
+.offline-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.offline-detail-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  align-items: flex-start;
+}
+.offline-detail-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.offline-detail-item strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.offline-detail-item p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+.offline-notice {
+  background: #fffdf0;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+.offline-notice strong {
+  color: #b8860b;
+}
+.offline-notice ul {
+  margin-top: 8px;
+  padding-left: 18px;
+  list-style: disc;
+}
+.offline-notice ul li {
+  margin-bottom: 4px;
+}
+
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .payment-steps { flex-direction: column; align-items: center; gap: 8px; }
   .payment-step .ps-arrow { display: none; }
   .quick-actions { justify-content: center; }
+  .offline-details { grid-template-columns: 1fr; }
 }

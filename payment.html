@@ -74,33 +74,89 @@
 
     <h3 style="margin-bottom:16px;">选择支付方式</h3>
     <div class="payment-methods">
-      <button class="payment-method selected">
+      <button class="payment-method selected" data-payment="wechat">
         <div class="pm-icon">💚</div>
         <div class="pm-name">微信支付</div>
       </button>
-      <button class="payment-method">
+      <button class="payment-method" data-payment="alipay">
         <div class="pm-icon">💙</div>
         <div class="pm-name">支付宝</div>
       </button>
-      <button class="payment-method">
+      <button class="payment-method" data-payment="bank">
         <div class="pm-icon">🏦</div>
         <div class="pm-name">银行卡</div>
       </button>
-      <button class="payment-method">
+      <button class="payment-method" data-payment="yibao">
         <div class="pm-icon">🏥</div>
         <div class="pm-name">医保卡</div>
       </button>
+      <button class="payment-method" data-payment="offline">
+        <div class="pm-icon">💵</div>
+        <div class="pm-name">线下缴费</div>
+      </button>
     </div>
 
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <button class="btn btn-primary" style="flex:1;" onclick="showToast('支付成功！¥184.95 已支付','success');setTimeout(function(){window.location.href='patient-dashboard.html';},1500);">
+    <!-- 线下缴费说明区域 -->
+    <div class="offline-payment-info" id="offlinePaymentInfo" style="display:none;">
+      <div class="offline-payment-card">
+        <div class="offline-header">
+          <span class="offline-icon">🏥</span>
+          <h4>线下缴费说明</h4>
+        </div>
+        <p class="offline-intro">您已选择<strong>线下缴费</strong>方式，请在就诊当日前往诊所现场缴纳费用。</p>
+
+        <div class="offline-details">
+          <div class="offline-detail-item">
+            <span class="offline-detail-icon">📍</span>
+            <div>
+              <strong>缴费地点</strong>
+              <p>大冲村诊所一楼挂号收费窗口</p>
+            </div>
+          </div>
+          <div class="offline-detail-item">
+            <span class="offline-detail-icon">🕐</span>
+            <div>
+              <strong>缴费时间</strong>
+              <p>周一至周五 08:00-17:30 | 周六 08:00-12:00</p>
+            </div>
+          </div>
+          <div class="offline-detail-item">
+            <span class="offline-detail-icon">💰</span>
+            <div>
+              <strong>支持方式</strong>
+              <p>现金、银行卡刷卡、医保卡实体卡、微信/支付宝现场扫码</p>
+            </div>
+          </div>
+          <div class="offline-detail-item">
+            <span class="offline-detail-icon">📋</span>
+            <div>
+              <strong>缴费流程</strong>
+              <p>携带本人身份证及社保卡 → 挂号窗口出示预约信息 → 核对费用 → 现场缴费 → 领取挂号单</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="offline-notice">
+          <strong>📌 温馨提示：</strong>
+          <ul>
+            <li>预约号源将为您保留至就诊当日，逾期未缴费将自动取消。</li>
+            <li>线下缴费同样享受医保报销政策，请携带社保卡。</li>
+            <li>如有疑问请联系客服热线 <strong>400-888-9999</strong>。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 在线支付安全提示 -->
+    <div class="online-payment-notice" id="onlinePaymentNotice" style="margin-top:24px;padding:16px;background:var(--primary-light);border-radius:var(--radius-sm);font-size:13px;color:var(--text-light);">
+      <strong>🔒 安全提示：</strong>本平台采用四级甲等信息安全标准，所有支付信息均经过加密传输。如遇支付问题请拨打客服热线 <strong>400-888-9999</strong>。
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+      <button class="btn btn-primary" style="flex:1;" id="confirmPaymentBtn" onclick="handlePaymentConfirm()">
         确认支付 ¥184.95
       </button>
       <button class="btn btn-outline" onclick="history.back()">返回</button>
-    </div>
-
-    <div style="margin-top:24px;padding:16px;background:var(--primary-light);border-radius:var(--radius-sm);font-size:13px;color:var(--text-light);">
-      <strong>🔒 安全提示：</strong>本平台采用四级甲等信息安全标准，所有支付信息均经过加密传输。如遇支付问题请拨打客服热线 <strong>400-888-9999</strong>。
     </div>
   </div>
 </section>
