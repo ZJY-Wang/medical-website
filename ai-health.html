@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI健康助手 - 大冲村诊所-健康医疗</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">+</span>
+      <span class="logo-text">大冲村诊所-健康医疗</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="appointment.html" class="nav-link">在线预约</a>
+      <a href="doctors.html" class="nav-link">医生团队</a>
+      <a href="disease.html" class="nav-link">病症科普</a>
+      <a href="news.html" class="nav-link">健康资讯</a>
+      <a href="ai-health.html" class="nav-link active">🤖 AI健康助手</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+      <a href="login.html" class="nav-link nav-login" style="background:var(--primary);color:#fff;border-radius:20px;">登录</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-banner" style="background:linear-gradient(160deg, #e8f5f3 0%, #e6f0f8 50%, #f0eff7 100%);">
+  <div class="container">
+    <h1>🤖 AI 健康助手</h1>
+    <p>基于人工智能大语言模型，为您提供智能健康咨询、症状分析、用药指导等全方位服务</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a><span>/</span><span>AI健康助手</span>
+    </div>
+
+    <!-- AI功能选项卡 -->
+    <div class="tabs" style="justify-content:center;">
+      <button class="tab-btn active" data-tab="tab-symptom">🔍 智能问诊</button>
+      <button class="tab-btn" data-tab="tab-drug">💊 用药助手</button>
+      <button class="tab-btn" data-tab="tab-assessment">📊 健康评估</button>
+      <button class="tab-btn" data-tab="tab-knowledge">📚 知识问答</button>
+      <button class="tab-btn" data-tab="tab-report">📋 报告解读</button>
+    </div>
+
+    <!-- ===== 智能问诊 ===== -->
+    <div class="tab-content active" id="tab-symptom">
+      <div class="ai-page-grid">
+        <div class="ai-main-panel">
+          <div class="ai-chat-container">
+            <div class="ai-chat-header">
+              <span class="ai-chat-avatar">🩺</span>
+              <div>
+                <strong>AI智能问诊助手</strong>
+                <p>请详细描述您的症状，AI将为您提供初步分析建议</p>
+              </div>
+            </div>
+            <div class="ai-chat-body" id="symptomChatBody">
+              <div class="ai-msg ai-msg-bot">
+                <div class="ai-msg-avatar">🤖</div>
+                <div class="ai-msg-content">
+                  <p>您好！我是AI智能问诊助手。请告诉我您目前的症状，包括：</p>
+                  <ul style="margin-top:8px;padding-left:18px;">
+                    <li>具体症状（如头痛、咳嗽、胸闷等）</li>
+                    <li>症状持续时间</li>
+                    <li>是否有其他伴随症状</li>
+                    <li>既往病史（如有）</li>
+                  </ul>
+                  <p style="margin-top:8px;">我会根据您的描述给出初步分析和就医建议。</p>
+                  <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">⚠ 本建议仅供参考，不能替代专业医疗诊断。</p>
+                </div>
+              </div>
+            </div>
+            <div class="ai-chat-input">
+              <textarea id="symptomInput" placeholder="请描述您的症状，例如：最近三天一直头痛，伴有恶心，睡眠也不好..." rows="3"></textarea>
+              <div class="ai-chat-actions">
+                <button class="btn btn-primary" id="symptomSubmit">🔍 开始分析</button>
+                <button class="quick-action-btn voice-btn" type="button" data-target="symptomInput">🎤 语音输入</button>
+                <button class="quick-action-btn" type="button" id="symptomClear">🗑 清空</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-side-panel">
+          <div class="ai-info-card">
+            <h4>📋 常见症状快速查询</h4>
+            <div class="ai-quick-tags">
+              <button class="ai-quick-tag" data-symptom="头痛头晕恶心">🤕 头痛头晕</button>
+              <button class="ai-quick-tag" data-symptom="胸闷胸痛心悸">❤️ 胸闷胸痛</button>
+              <button class="ai-quick-tag" data-symptom="咳嗽发烧流鼻涕">🤧 咳嗽发烧</button>
+              <button class="ai-quick-tag" data-symptom="腹痛腹泻胃胀">🔴 腹痛腹泻</button>
+              <button class="ai-quick-tag" data-symptom="腰酸背痛腿疼">🦴 腰酸背痛</button>
+              <button class="ai-quick-tag" data-symptom="皮肤瘙痒红疹">🔵 皮肤问题</button>
+              <button class="ai-quick-tag" data-symptom="失眠焦虑情绪低落">😰 失眠焦虑</button>
+              <button class="ai-quick-tag" data-symptom="视力模糊眼睛干涩">👁 视力问题</button>
+              <button class="ai-quick-tag" data-symptom="牙齿疼痛牙龈出血">🦷 牙齿问题</button>
+              <button class="ai-quick-tag" data-symptom="尿频尿急尿痛">⚠ 泌尿问题</button>
+              <button class="ai-quick-tag" data-symptom="月经不调痛经">🌸 妇科问题</button>
+              <button class="ai-quick-tag" data-symptom="小儿发热咳嗽食欲不振">👶 儿科问题</button>
+            </div>
+          </div>
+          <div class="ai-info-card" style="margin-top:16px;">
+            <h4>⚠ 紧急症状提示</h4>
+            <ul class="ai-emergency-list">
+              <li>🚨 突发剧烈胸痛 → 立即拨打120</li>
+              <li>🚨 呼吸困难/窒息 → 立即就医</li>
+              <li>🚨 突发意识丧失 → 立即拨打120</li>
+              <li>🚨 严重外伤大出血 → 立即就医</li>
+              <li>🚨 突发口眼歪斜/言语不清 → 立即拨打120</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 用药助手 ===== -->
+    <div class="tab-content" id="tab-drug">
+      <div class="ai-page-grid">
+        <div class="ai-main-panel">
+          <div class="ai-chat-container">
+            <div class="ai-chat-header">
+              <span class="ai-chat-avatar">💊</span>
+              <div>
+                <strong>AI用药助手</strong>
+                <p>查询药品信息、用法用量、注意事项及药物相互作用</p>
+              </div>
+            </div>
+            <div class="ai-chat-body" id="drugChatBody">
+              <div class="ai-msg ai-msg-bot">
+                <div class="ai-msg-avatar">🤖</div>
+                <div class="ai-msg-content">
+                  <p>我是AI用药助手，可以帮助您：</p>
+                  <ul style="margin-top:8px;padding-left:18px;">
+                    <li>查询药品的适应症、用法用量和副作用</li>
+                    <li>检查多种药物之间的相互作用</li>
+                    <li>提供用药安全提示</li>
+                  </ul>
+                  <p style="margin-top:8px;">请输入您想了解的药品名称，或输入多种药品名称（用逗号分隔）来检查相互作用。</p>
+                </div>
+              </div>
+            </div>
+            <div class="ai-chat-input">
+              <textarea id="drugInput" placeholder="输入药品名称查询，例如：阿莫西林,布洛芬（多种药品用逗号分隔以检查相互作用）" rows="2"></textarea>
+              <div class="ai-chat-actions">
+                <button class="btn btn-primary" id="drugSubmit">🔍 查询药品</button>
+                <button class="quick-action-btn" type="button" id="drugClear">🗑 清空</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-side-panel">
+          <div class="ai-info-card">
+            <h4>💊 常用药品快速查询</h4>
+            <div class="ai-quick-tags">
+              <button class="ai-quick-tag drug-quick" data-drug="阿莫西林">阿莫西林</button>
+              <button class="ai-quick-tag drug-quick" data-drug="布洛芬">布洛芬</button>
+              <button class="ai-quick-tag drug-quick" data-drug="对乙酰氨基酚">对乙酰氨基酚</button>
+              <button class="ai-quick-tag drug-quick" data-drug="奥美拉唑">奥美拉唑</button>
+              <button class="ai-quick-tag drug-quick" data-drug="氯雷他定">氯雷他定</button>
+              <button class="ai-quick-tag drug-quick" data-drug="阿司匹林">阿司匹林</button>
+              <button class="ai-quick-tag drug-quick" data-drug="头孢克洛">头孢克洛</button>
+              <button class="ai-quick-tag drug-quick" data-drug="蒙脱石散">蒙脱石散</button>
+              <button class="ai-quick-tag drug-quick" data-drug="氨氯地平">氨氯地平</button>
+              <button class="ai-quick-tag drug-quick" data-drug="二甲双胍">二甲双胍</button>
+            </div>
+          </div>
+          <div class="ai-info-card" style="margin-top:16px;">
+            <h4>⚠ 用药安全提示</h4>
+            <ul class="ai-emergency-list">
+              <li>💊 请勿自行混用多种药物</li>
+              <li>🍺 服药期间请勿饮酒</li>
+              <li>🤰 孕妇用药需咨询医生</li>
+              <li>👶 儿童用药需按体重计算剂量</li>
+              <li>⏰ 按时服药，请勿随意停药</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 健康评估 ===== -->
+    <div class="tab-content" id="tab-assessment">
+      <div class="ai-page-grid">
+        <div class="ai-main-panel">
+          <div class="ai-chat-container">
+            <div class="ai-chat-header">
+              <span class="ai-chat-avatar">📊</span>
+              <div>
+                <strong>AI健康评估</strong>
+                <p>基于您的健康数据，AI将提供综合健康风险评估和建议</p>
+              </div>
+            </div>
+            <div class="ai-chat-body" id="assessChatBody">
+              <div class="ai-msg ai-msg-bot">
+                <div class="ai-msg-avatar">🤖</div>
+                <div class="ai-msg-content">
+                  <p>欢迎使用AI健康评估工具！请填写以下健康信息，我将为您生成个性化的健康评估报告：</p>
+                </div>
+              </div>
+            </div>
+            <div class="ai-chat-input">
+              <div class="ai-assessment-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>年龄</label>
+                    <input type="number" id="assessAge" placeholder="请输入年龄" min="0" max="150">
+                  </div>
+                  <div class="form-group">
+                    <label>性别</label>
+                    <select id="assessGender">
+                      <option value="">请选择</option>
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>身高 (cm)</label>
+                    <input type="number" id="assessHeight" placeholder="例如：170">
+                  </div>
+                  <div class="form-group">
+                    <label>体重 (kg)</label>
+                    <input type="number" id="assessWeight" placeholder="例如：65">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>收缩压 (mmHg)</label>
+                    <input type="number" id="assessSbp" placeholder="例如：120">
+                  </div>
+                  <div class="form-group">
+                    <label>舒张压 (mmHg)</label>
+                    <input type="number" id="assessDbp" placeholder="例如：80">
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom:12px;">
+                  <label>既往病史（可选）</label>
+                  <textarea id="assessHistory" placeholder="例如：高血压5年、糖尿病2年..." rows="2"></textarea>
+                </div>
+                <div class="form-group" style="margin-bottom:12px;">
+                  <label>生活方式（可选）</label>
+                  <textarea id="assessLifestyle" placeholder="例如：每周运动2次、每天吸烟10支、睡眠6小时..." rows="2"></textarea>
+                </div>
+                <div style="display:flex;gap:12px;">
+                  <button class="btn btn-primary" id="assessSubmit">📊 生成健康报告</button>
+                  <button class="quick-action-btn" type="button" id="assessClear">🗑 清空</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-side-panel">
+          <div class="ai-info-card">
+            <h4>📊 健康指标参考</h4>
+            <table class="data-table" style="font-size:13px;">
+              <thead><tr><th>指标</th><th>正常范围</th></tr></thead>
+              <tbody>
+                <tr><td>BMI</td><td>18.5 - 23.9</td></tr>
+                <tr><td>血压</td><td>&lt;120/80 mmHg</td></tr>
+                <tr><td>空腹血糖</td><td>3.9-6.1 mmol/L</td></tr>
+                <tr><td>总胆固醇</td><td>&lt;5.2 mmol/L</td></tr>
+                <tr><td>心率</td><td>60-100 次/分</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 知识问答 ===== -->
+    <div class="tab-content" id="tab-knowledge">
+      <div class="ai-page-grid">
+        <div class="ai-main-panel">
+          <div class="ai-chat-container">
+            <div class="ai-chat-header">
+              <span class="ai-chat-avatar">📚</span>
+              <div>
+                <strong>AI健康知识问答</strong>
+                <p>基于海量医学知识库，回答您的健康相关问题</p>
+              </div>
+            </div>
+            <div class="ai-chat-body" id="knowledgeChatBody">
+              <div class="ai-msg ai-msg-bot">
+                <div class="ai-msg-avatar">🤖</div>
+                <div class="ai-msg-content">
+                  <p>您好！我是AI健康知识助手，可以回答您关于健康、养生、疾病预防等方面的问题。例如：</p>
+                  <ul style="margin-top:8px;padding-left:18px;">
+                    <li>"每天应该喝多少水？"</li>
+                    <li>"高血压患者饮食需要注意什么？"</li>
+                    <li>"如何预防感冒？"</li>
+                    <li>"运动后肌肉酸痛怎么办？"</li>
+                    <li>"孕期需要补充哪些营养？"</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ai-chat-input">
+              <textarea id="knowledgeInput" placeholder="请输入您的健康问题..." rows="2"></textarea>
+              <div class="ai-chat-actions">
+                <button class="btn btn-primary" id="knowledgeSubmit">🔍 提问</button>
+                <button class="quick-action-btn voice-btn" type="button" data-target="knowledgeInput">🎤 语音输入</button>
+                <button class="quick-action-btn" type="button" id="knowledgeClear">🗑 清空</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-side-panel">
+          <div class="ai-info-card">
+            <h4>🔥 热门健康问题</h4>
+            <ul style="list-style:none;">
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="每天应该喝多少水最健康">每天喝多少水？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="高血压患者饮食需要注意什么">高血压怎么吃？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="如何有效预防感冒和流感">如何预防感冒？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="每天走多少步最健康">每天走多少步？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="长期熬夜对身体有哪些危害">熬夜有什么危害？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="糖尿病患者可以吃水果吗">糖尿病人能吃水果吗？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="如何缓解颈椎病引起的疼痛">如何缓解颈椎病？</button></li>
+              <li style="margin-bottom:8px;"><button class="ai-quick-tag knowledge-quick" data-question="儿童疫苗有哪些需要接种">儿童疫苗有哪些？</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 报告解读 ===== -->
+    <div class="tab-content" id="tab-report">
+      <div class="ai-page-grid">
+        <div class="ai-main-panel">
+          <div class="ai-chat-container">
+            <div class="ai-chat-header">
+              <span class="ai-chat-avatar">📋</span>
+              <div>
+                <strong>AI体检报告解读</strong>
+                <p>帮助您理解体检报告中的各项指标和医学术语</p>
+              </div>
+            </div>
+            <div class="ai-chat-body" id="reportChatBody">
+              <div class="ai-msg ai-msg-bot">
+                <div class="ai-msg-avatar">🤖</div>
+                <div class="ai-msg-content">
+                  <p>我可以帮助您解读体检报告中的指标。请选择指标类型或直接输入您想了解的指标名称：</p>
+                  <p style="margin-top:8px;font-size:13px;color:var(--text-muted);">支持：血常规、肝功能、肾功能、血脂、血糖、尿酸等常见体检指标</p>
+                </div>
+              </div>
+            </div>
+            <div class="ai-chat-input">
+              <textarea id="reportInput" placeholder="请输入体检指标名称或粘贴指标数值，例如：ALT 85、总胆固醇 6.2、肌酐 110..." rows="3"></textarea>
+              <div class="ai-chat-actions">
+                <button class="btn btn-primary" id="reportSubmit">📋 解读指标</button>
+                <button class="quick-action-btn" type="button" id="reportClear">🗑 清空</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ai-side-panel">
+          <div class="ai-info-card">
+            <h4>📋 常见指标快速查询</h4>
+            <div class="ai-quick-tags">
+              <button class="ai-quick-tag report-quick" data-report="ALT谷丙转氨酶偏高">ALT 谷丙转氨酶</button>
+              <button class="ai-quick-tag report-quick" data-report="总胆固醇偏高">总胆固醇</button>
+              <button class="ai-quick-tag report-quick" data-report="空腹血糖偏高">空腹血糖</button>
+              <button class="ai-quick-tag report-quick" data-report="尿酸偏高">尿酸</button>
+              <button class="ai-quick-tag report-quick" data-report="肌酐偏高">肌酐</button>
+              <button class="ai-quick-tag report-quick" data-report="血红蛋白偏低">血红蛋白</button>
+              <button class="ai-quick-tag report-quick" data-report="甘油三酯偏高">甘油三酯</button>
+              <button class="ai-quick-tag report-quick" data-report="白细胞偏高">白细胞计数</button>
+            </div>
+          </div>
+          <div class="ai-info-card" style="margin-top:16px;">
+            <h4>💡 温馨提示</h4>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.8;">
+              体检报告解读仅供参考，具体诊断和治疗方案请咨询专业医生。建议每年进行一次全面体检。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AI免责声明 -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="ai-disclaimer">
+      <h3>⚠️ 重要免责声明</h3>
+      <ul>
+        <li>本AI健康助手提供的内容仅供参考和教育目的，<strong>不能替代专业医疗诊断、治疗或建议</strong>。</li>
+        <li>AI分析结果基于您输入的信息和通用医学知识库，<strong>可能存在误差或遗漏</strong>。</li>
+        <li>如果您遇到医疗紧急情况，请<strong>立即拨打120</strong>或前往最近的急诊室。</li>
+        <li>任何健康问题请及时咨询执业医师，<strong>请勿根据AI建议自行用药或延误就医</strong>。</li>
+        <li>本系统不会存储您的个人健康信息，所有对话仅在当前会话中有效。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>关于大冲村诊所</h4>
+      <p>大冲村诊所-健康医疗致力于为全国人民提供便捷、专业、可信赖的在线医疗服务，让优质医疗资源触手可及。</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速链接</h4>
+      <ul>
+        <li><a href="appointment.html">在线预约</a></li>
+        <li><a href="doctors.html">医生团队</a></li>
+        <li><a href="disease.html">病症科普</a></li>
+        <li><a href="news.html">健康资讯</a></li>
+        <li><a href="ai-health.html">AI健康助手</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>服务声明</h4>
+      <ul>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">用户协议</a></li>
+        <li><a href="#">就医指南</a></li>
+        <li><a href="contact.html">投诉建议</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关注我们</h4>
+      <p>微信公众号：大冲村诊所-健康医疗</p>
+      <p>微博：@大冲村诊所-健康医疗</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 大冲村诊所-健康医疗 版权所有 | 本站内容仅供参考，不能替代专业医疗诊断</p>
+  </div>
+</footer>
+
+<div class="a11y-toolbar">
+  <button class="a11y-btn" data-a11y="font-size" title="字体放大">🔤<span class="a11y-tooltip">字体放大</span></button>
+  <button class="a11y-btn" data-a11y="contrast" title="高对比度">👁<span class="a11y-tooltip">高对比度</span></button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/ai-health.js"></script>
+</body>
+</html>
